@@ -1,44 +1,93 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    
 }
 
 body {
-    margin: 2%;
-    justify-content: center;
-    overflow: hidden;
+    font-family: 'Inconsolata', monospace;
+    background-color: #eef; 
+    color: #333; 
+    padding: 20px;
 }
 
-.box-wrapper {
-    height: 95vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+.container {
+    max-width: 800px; 
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+}
+
+h1, h2, h3 {
+    margin-bottom: 20px; 
+}
+
+h1 {
+    font-size: 300%;
+    background-color: gray;
+    font-style: italic;
+    color: white;
     text-align: center;
+    margin: 0%;
+    padding: 0%; 
 }
 
-#box1 {
-    padding: 10px;
-    border: solid 1px blue;
+.form-group {
+    display: flex;
+    margin-bottom: 15px; 
+    justify-content: space-between;
 }
 
-#box2 {
-    padding: 10px;
-    border: solid 1px blue;
+#city-search-form input[type="text"] {
+    margin-top: 10px;
 }
 
-#box3 {
-    padding: 10px;
-    border: solid 1px blue;
+#city-search-form button {
+    margin-top: 10px; 
 }
 
-#box4 {
-    padding: 10px;
-    border: solid 1px blue;
+.error-message {
+    display: none; 
+    color: red; 
+    margin-top: 10px; 
+    font-weight: bold; 
+    text-align: center; 
 }
 
-#box5 {
+#current-weather, #forecast-weather {
+    margin-top: 20px; 
+    border: 30px #083de9;
+}
+
+
+#forecast-cards-container {
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+}
+
+#forecast-cards-container > div {
+    flex-basis: 18%; 
+    margin-bottom: 20px; 
     padding: 10px;
-    border: solid 1px blue;
+    background-color: #ddf; 
+    border-radius: 5px; 
+}
+
+#search-history {
+    margin-top: 20px; 
+}
+
+#search-history-list {
+    list-style: none; 
+}
+
+#search-history-list li {
+    background-color: #f0f0f0; 
+    margin-bottom: 5px; 
+    padding: 5px;
+    border-radius: 5px; 
+    cursor: pointer; 
 }
