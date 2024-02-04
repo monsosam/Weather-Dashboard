@@ -1,7 +1,6 @@
 * {
     margin: 0;
-    padding: 0;
-    
+    padding: 10px;
 }
 
 body {
@@ -34,6 +33,7 @@ h1 {
     padding: 0%; 
 }
 
+
 .form-group {
     display: flex;
     margin-bottom: 15px; 
@@ -56,13 +56,15 @@ h1 {
     text-align: center; 
 }
 
-#current-weather, #forecast-weather {
-    margin-top: 20px; 
-    border: 30px #083de9;
+#forecast-weather {
+    border-top: 15px #0000;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-
 #forecast-cards-container {
+    border-top: 15px #0000;
     display: flex;
     justify-content: space-between; 
     flex-wrap: wrap; 
