@@ -17,25 +17,29 @@
 </head> 
 <body>
 
-    <div class="container">
+    <header id ="header">
         <h1>Weather Dashboard</h1>
-        
-        <!-- Form for searching a city -->
-        <form id="city-search-form">
-            <div class="form-group">
-                <label for="city-input">Search for a City:</label>
-                <input type="text" class="form-control" id="city-input" placeholder="Enter city name">
-                <button type="submit" class="btn btn-primary mt-2">Search</button>
-            </div>
-        </form>
+    </header>
 
-         <!-- Search history section -->
-         <div id="search-history">
-            <h3>Search History</h3>
-            <ul id="search-history-list" aria-live="polite">
-                <!-- Search history items will be dynamically inserted here -->
-            </ul>
-        </div>
+    <section id="pageContainer">
+        <!-- Form for searching a city -->
+
+        <section id="citySearchcontainer">
+            <section id="citySearch"> <!-- Actual Search Bar-->
+                <h2>Search for a City:</h2>
+                <input id="searchInput" placeholder="Enter city name">
+                <button id="searchBtn" type="button">Search</button>
+            </section>
+    
+             <!-- Search history section -->
+            <section id="searchHistorycontainer">
+    
+                <div id="citiesSearched"></div>
+    
+            </section>
+        </section>
+
+        
 
         <!-- Error message display area -->
         <div id="error-message" class="error-message" aria-live="assertive"></div>
@@ -55,9 +59,13 @@
                 <!-- Forecast cards will be dynamically inserted here -->
             </div>
         </div>
+    </section>
+        
+        
+        
         
        
-    </div>
+    
 
     <script src="./assets/js/script.js"></script>
 
