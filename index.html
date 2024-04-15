@@ -1,73 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
-</head> 
-<body>
+    <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    
 
-    <header id ="header">
+</head>
+
+<body>
+    <!-- Header Here-->
+    <header id="header">
         <h1>Weather Dashboard</h1>
     </header>
 
-    <section id="pageContainer">
-        <!-- Form for searching a city -->
+    <!-- Main Body Here-->
+    <!-- Based on the example. It looks like we will have 3 containers inside one.  One for our search.  One displaying our current city and dates weather, and then a 3rd container for the 5 day forecast. -->
+
+    <section id="pageContainer"> <!-- Beginning of Container Box -->
+
+        <!-- Box 1, Search-->
 
         <section id="citySearchcontainer">
+            <!-- Within our Search Bar, we have two areas.  One with the actual search bar, and the other with an area displaying previously searched cities-->
+
             <section id="citySearch"> <!-- Actual Search Bar-->
                 <h2>Search for a City:</h2>
                 <input id="searchInput" placeholder="Enter city name">
                 <button id="searchBtn" type="button">Search</button>
             </section>
-    
-             <!-- Search history section -->
+
+            <!-- List of previous searches-->
             <section id="searchHistorycontainer">
-    
+
                 <div id="citiesSearched"></div>
-    
+
             </section>
-        </section>
 
-        
+        </section> <!-- End Search Section-->
 
-        <!-- Error message display area -->
-        <div id="error-message" class="error-message" aria-live="assertive"></div>
-        
-        <!-- Section for displaying current weather conditions -->
-        <div id="current-weather">
-            <h2>Current Weather Conditions</h2>
-            <div id="current-weather-details" aria-live="polite">
-                <!-- Content will be dynamically inserted here -->
-            </div>
-        </div>
-        
-        <!-- Section for displaying the 5-day forecast -->
-        <div id="forecast-weather">
-            <h2>5-Day Forecast</h2>
-            <div id="forecast-cards-container" aria-live="polite">
-                <!-- Forecast cards will be dynamically inserted here -->
-            </div>
-        </div>
-    </section>
-        
-        
-        
-        
-       
-    
+        <!-- We wrap the next two boxes into one container so that we can get them stacked on top of eachother using flex and column on the css-->
+        <section id="weatherContainer">
+            <h3>Current City and Weather</h3>
 
-    <script src="./assets/js/script.js"></script>
+            <!-- Box 2, Current Day/City and Weather -->
+            <section id="currentWeather">
+                <!-- Addinng a new div inside the section so that we can display the weather information there.-->
+                <div id="weatherInfo"></div>
+                <h2 id="todayCityname"></h2>
+                <img id="weatherIcon" src="" alt="Weather Icon" style="display:none;">
+                <p id="todayCitytemp">Temperature:</p>
+                <p id="todayCitywind">Wind:</p>
+                <p id="todayCityhumidity">Humidity: </p>
+            </section><!-- End Current Day -->
 
+            <!-- Added a section to just keep the header for the next section seperate from the styling that will happen to the items in that 5 day-->
+            <section id="forecast">
+                <h3>5-Day Forecast:</h3>
+
+                <!-- Box 3, 5 day forecast for chosen city -->
+                <section id="fiveDayforecast">
+
+                    <!-- Inside the 5 day, we are going to need 5 boxes, one for each day.-->
+
+                    <figure id="day1" class="forecast-hidden"> <!-- Current Day-->
+                        <h4 class="currentDayforecast">Date</h4>
+                        <img src="" id="day1icon" alt="Weather Icon">
+                        <p class="temperature"></p>
+                        <p class="wind"></p>
+                        <p class="humidity"></p>
+                    </figure>
+
+                    <figure id="day2" class="forecast-hidden">
+                        <h4 class="currentDayforecast">Date</h4>
+                        <img src="" id="day2icon" alt="Weather Icon">
+                        <p class="temperature"></p>
+                        <p class="wind"></p>
+                        <p class="humidity"></p>
+                    </figure>
+
+                    <figure id="day3" class="forecast-hidden">
+                        <h4 class="currentDayforecast">Date</h4>
+                        <img src="" id="day3icon" alt="Weather Icon">
+                        <p class="temperature"></p>
+                        <p class="wind"></p>
+                        <p class="humidity"></p>
+                    </figure>
+
+                    <figure id="day4" class="forecast-hidden">
+                        <h4 class="currentDayforecast">Date</h4>
+                        <img src="" id="day4icon" alt="Weather Icon">
+                        <p class="temperature"></p>
+                        <p class="wind"></p>
+                        <p class="humidity"></p>
+                    </figure>
+
+                    <figure id="day5" class="forecast-hidden">
+                        <h4 class="currentDayforecast">Date</h4>
+                        <img src="" id="day5icon" alt="Weather Icon">
+                        <p class="temperature"></p>
+                        <p class="wind"></p>
+                        <p class="humidity"></p>
+                    </figure>
+
+                </section><!-- End Five Day -->
+            </section>
+
+        </section> <!-- End of Weather Container Box 2 and 3-->
+
+    </section> 
+
+
+
+
+    <!-- javscript link in before the /body close-->
+    <script src="assets/js/script.js"></script>
 </body>
+
 </html>
