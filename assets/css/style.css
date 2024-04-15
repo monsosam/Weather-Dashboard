@@ -1,191 +1,95 @@
-/* Things to apply to the entire body */
+* {
+    margin: 0;
+    padding: 10px;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Inconsolata', monospace;
+    background-color: #eef; 
+    color: #333; 
+    padding: 20px;
 }
 
-/* Consolidating certain styles */
-#header, #footer {
-    text-align: center;
-    background-color: #7CB9E8;
-    color: white;
-    padding: 10px;
-}
-
-/* Header Box */
-#header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px; /* Adjust the font size as needed */
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Adjust shadow values as needed */
-    letter-spacing: 1px; /* Adjust letter spacing as needed */
-    width: 100%;
-    height: 100px;
-    background: linear-gradient(to right, lightblue, blue);
-
-}
-
-/*I want my container and boxes to initially be centered and able to flex*/
-#pageContainer {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-/* Our search container is going to be in a column to the left of the other two containers*/
-#citySearchcontainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;   
-    margin-top: 10px;    
-}
-
-#citySearch, #citiesSearched {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  
-}
-
-/*We want both our search text input field and our button to take up their own lines. So we set the width to 100% and also add box-sizing so that they are consistent with each other.*/
-#searchInput, #searchBtn {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    box-sizing: border-box;
-}
-
-#searchBtn {
-    background-color: lightblue;
-    color: white;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    transition: background-color 0.4s;
-    box-sizing: border-box;
-}
-
-#searchBtn:hover {
-    background-color: blue;
-  }
-
-#searchHistorycontainer {
-    width: 100%;
-    border-top: 2px solid black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;       
-}
-
-#citiesSearched button{
-    background-color: #B9D9EB;
-    padding: 10px;
-    width: 100%;     /* Make the buttons as wide as the search bar */
-    color: black;
-    font-weight: bold;
-    margin-top: 5px;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    box-sizing: border-box;
-}
-
-#citiesSearched button:hover{
-    background-color: #CCCCFF;
-}
-
-#weatherContainer {
-    display: flex;
-    flex-direction: column;
-}
-
-/*Similiar to our 5 day, we want the text to be hidden until we have something to show with it.*/
-#todayCitytemp,#todayCitywind,#todayCityhumidity {
-    display: none;
-}
-
-#weatherContainer h3{
-    text-align: center;
-    margin: 0;
-    padding: 10px 0;
-}
-
-#currentWeather{
-    border: 2px solid #ccc; /* Add borders with a color of your choice */
-    padding: 20px; /* Add padding for some spacing inside the box */
-    margin: 10px; /* Add margin to separate it from other elements */
-    width: 760px;
-    background-color: #7CB9E8;
-}
-
-#currentWeather p{
-    font-weight: bolder;
-}
-
-/* I want the name/date to be next to the weather icon we will pull from the API*/
-#todayCityname, #weatherIcon {
-    display:inline-block;
-    vertical-align: middle;
-}
-
-#weatherIcon {
-    margin-left: 10px;
-}
-
-#forecast h3 {
-    text-align: center;
-    margin: 0;
-    padding: 10px 0;
-}
-
-/* Initially we hide the 5 day boxes, so that we don't view them until after we do a city search and pull a 5 day api */
-
-#day1, #day2, #day3, #day4, #day5{
-    background-color: #002244;
-    color: white;
-    padding: 5px;
-    margin: 5px 5px;
-    align-items: center;
-    text-align: center;
-}
-
-.forecast-hidden {
-    display: none;
-}
-
-/*Footer Styling.  Want the image to be centered and to keep it at the bottom of the screen.*/
-#footer{
-    position: fixed; 
-    bottom: 0; 
-    left: 0; 
-    right: 0; 
-    text-align: center;
-    display: flex; 
-    justify-content: center; 
+.container {
+    max-width: 800px; 
+    margin: 0 auto;
+    padding: 20px;
     background-color: #fff; 
-    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
 }
 
-/* Adding our @media Screens */
+h1, h2, h3 {
+    margin-bottom: 20px; 
+}
 
-@media (max-width: 767px) {
-    #pageContainer {
-        flex-direction: column;
-    }
+h1 {
+    font-size: 300%;
+    background-color: gray;
+    font-style: italic;
+    color: white;
+    text-align: center;
+    margin: 0%;
+    padding: 0%; 
+}
 
-    #citySearchcontainer, #searchHistorycontainer, #weatherContainer, #currentWeather, #forecast {
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-     } 
-    }
+
+.form-group {
+    display: flex;
+    margin-bottom: 15px; 
+    justify-content: space-between;
+}
+
+#city-search-form input[type="text"] {
+    margin-top: 10px;
+}
+
+#city-search-form button {
+    margin-top: 10px; 
+}
+
+.error-message {
+    display: none; 
+    color: red; 
+    margin-top: 10px; 
+    font-weight: bold; 
+    text-align: center; 
+}
+
+#forecast-weather {
+    border-top: 15px #0000;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#forecast-cards-container {
+    border-top: 15px #0000;
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+}
+
+#forecast-cards-container > div {
+    flex-basis: 18%; 
+    margin-bottom: 20px; 
+    padding: 10px;
+    background-color: #ddf; 
+    border-radius: 5px; 
+}
+
+#search-history {
+    margin-top: 20px; 
+}
+
+#search-history-list {
+    list-style: none; 
+}
+
+#search-history-list li {
+    background-color: #f0f0f0; 
+    margin-bottom: 5px; 
+    padding: 5px;
+    border-radius: 5px; 
+    cursor: pointer; 
+}
