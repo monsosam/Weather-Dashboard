@@ -48,12 +48,6 @@ function updateWeatherDetails(weatherData) {
     createElementWithContent('p', `Conditions: ${currentWeather.weather[0].description}`, currentWeatherDiv);
     
 
-    // Add weather icon using createElementWithContent for consistency
-    const iconUrl = `https://openweathermap.org/img/wn/${currentWeather.weather[0].icon}.png`;
-    const iconElem = createElementWithContent('img', '', currentWeatherDiv);
-    iconElem.setAttribute('src', iconUrl);
-    iconElem.setAttribute('alt', currentWeather.weather[0].description);
-
 
     // Clear the forecast cards.
     const forecastDiv = document.getElementById('forecast-cards-container');
@@ -72,12 +66,6 @@ function updateWeatherDetails(weatherData) {
         createElementWithContent('p', `Temp: ${forecast.main.temp.toFixed(1)}°F`, forecastCard);
         createElementWithContent('p', `Wind: ${forecast.wind.speed.toFixed(1)} MPH`, forecastCard);
         createElementWithContent('p', `Humidity: ${forecast.main.humidity}%`, forecastCard);
-
-        // Add forecast icon
-        const forecastIconUrl = `http://openweathermap.org/img/wn/${forecast.weather[0].icon}.png`;
-        const forecastIconElem = createElementWithContent('img', '', forecastCard);
-        forecastIconElem.setAttribute('src', forecastIconUrl);
-        forecastIconElem.setAttribute('alt', forecast.weather[0].description);
 
         // Append the forecast card to the forecast container
         forecastDiv.appendChild(forecastCard);

@@ -17,46 +17,43 @@
 </head> 
 <body>
 
+    <h1>Weather Dashboard</h1>
+
     <div class="container">
-        <h1>Weather Dashboard</h1>
-        
-        <!-- Form for searching a city -->
-        <form id="city-search-form">
-            <div class="form-group">
-                <label for="city-input">Search for a City:</label>
-                <input type="text" class="form-control" id="city-input" placeholder="Enter city name">
-                <button type="submit" class="btn btn-primary mt-2">Search</button>
-            </div>
-        </form>
 
-         <!-- Search history section -->
-         <div id="search-history">
-            <h3>Search History</h3>
-            <ul id="search-history-list" aria-live="polite">
-                <!-- Search history items will be dynamically inserted here -->
-            </ul>
+        <div class="left-panel">
+            <!-- Form for searching a city -->
+            <h2>Search for a City:</h2>
+            <form id="city-search-form">
+                <input type="text" id="city-input" placeholder="Enter city name">
+                <button type="submit">Search</button>
+            </form>
+
+            <!-- Search history section -->
+            <div id="search-history">
+                <ul id="search-history-list">
+                    <!-- Search history items will be dynamically inserted here -->
+                </ul>
+            </div>
+
+            <!-- Error message display area -->
+            <div id="error-message" class="error-message" aria-live="assertive"></div>
         </div>
 
-        <!-- Error message display area -->
-        <div id="error-message" class="error-message" aria-live="assertive"></div>
-        
-        <!-- Section for displaying current weather conditions -->
-        <div id="current-weather">
-            <h2>Current Weather Conditions</h2>
-            <div id="current-weather-details" aria-live="polite">
-                <!-- Content will be dynamically inserted here -->
+        <div class="right-panel">
+            <!-- Section for displaying current weather conditions -->
+            <div id="current-weather">
+                <div id="current-weather-details" aria-live="polite">
+                    <!-- Content will be dynamically inserted here -->
+                </div>
             </div>
-        </div>
-        
-        <!-- Section for displaying the 5-day forecast -->
-        <div id="forecast-weather">
-            <h2>5-Day Forecast</h2>
+            
+            <!-- Section for displaying the 5-day forecast -->
+            <h2>5-Day Forecast:</h2>
             <div id="forecast-cards-container" aria-live="polite">
                 <!-- Forecast cards will be dynamically inserted here -->
             </div>
-        </div>
-        
-       
+        </div> 
     </div>
 
     <script src="./assets/js/script.js"></script>
